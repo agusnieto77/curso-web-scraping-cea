@@ -86,7 +86,7 @@ text_post
 # VERSIÓN COMPACTA PARA EXTRAER MENSAJES
 # --------------------------------------
 # Ejemplo usando una URL específica de hilo
-text_post <- html_text(html_elements(read_html_live("https://boards.4chan.org/pol/thread/508525729"), "blockquote.postMessage"))
+text_post <- html_text(html_elements(read_html_live("https://boards.4chan.org/pol/thread/508589755"), "blockquote.postMessage"))
 
 # =====================================
 # -----------CONCEPTOS CLAVE-----------
