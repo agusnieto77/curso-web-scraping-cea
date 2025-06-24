@@ -1,5 +1,5 @@
 # ==========================================
-# ---WEB SCRAPING DE NOTICIAS - TUTORIAL----
+# --------WEB SCRAPING DE NOTICIAS----------
 # ==========================================
 
 # Cargar la librería necesaria para web scraping

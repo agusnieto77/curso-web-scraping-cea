@@ -1,5 +1,5 @@
 # =====================================
-# WEB SCRAPING DE 4CHAN CON R - TUTORIAL
+# --------WEB SCRAPING DE 4CHAN--------
 # =====================================
 
 # Cargar la librería necesaria para web scraping
