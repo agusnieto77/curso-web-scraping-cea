@@ -153,3 +153,9 @@ download.file(
 #    - Usar mode="wb" para descargar archivos binarios (imágenes, PDFs, etc.)
 #    - Organizar datos en estructuras coherentes
 #    - Guardar URLs de referencia para trazabilidad
+
+# ===============================================
+# NOTA: Comentarios escritos por Claude Sonnet 4
+# Modelo de IA desarrollado por Anthropic
+# Fecha: Junio 2025
+# ===============================================

@@ -137,3 +137,9 @@ text_post <- html_text(html_elements(read_html_live("https://boards.4chan.org/po
 # En resumen: El robots.txt de 4chan permite el acceso general a los hilos y catálogos, pero restringe 
 # URLs con el parámetro "?mode=". Siempre es recomendable revisar este archivo antes de realizar scraping 
 # para respetar las restricciones del sitio.
+
+# ===============================================
+# NOTA: Comentarios escritos por Claude Sonnet 4
+# Modelo de IA desarrollado por Anthropic
+# Fecha: Junio 2025
+# ===============================================
