@@ -92,6 +92,10 @@ tabla_hoteles <- mutate(
   # Limpiar precio final con el mismo proceso
   precio_final = as.numeric(str_replace_all(str_remove_all(precio_final, "€\\s?"), "\\.", "")),
   
+  fecha_in = as.Date(fecha_in), 
+  
+  fecha_out = as.Date(fecha_out),
+  
   # Extraer solo el número de la información de disponibilidad
   # str_extract(disponibilidad, "\\d+"): extrae el primer número encontrado
   disponibilidad = as.numeric(str_extract(disponibilidad, "\\d+"))
