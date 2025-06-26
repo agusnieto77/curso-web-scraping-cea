@@ -43,7 +43,7 @@ url <- paste0("https://www.booking.com/hotel/es/",
 # ---------------------------------
 # Obtener el contenido HTML de la página con todos los parámetros especificados
 
-html <- read_html(url)
+html <- read_html_live(url)
 
 # PASO 4: EXTRAER DATOS Y CREAR TABLA ESTRUCTURADA
 # ------------------------------------------------
