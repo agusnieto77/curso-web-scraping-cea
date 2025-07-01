@@ -13,7 +13,7 @@ library(tidyverse)  # Suite completa para manipulación de datos
 # Google News RSS permite búsquedas específicas por términos
 
 url_rss_base <- "https://news.google.com/rss/search?q="  # URL base del feed RSS de Google News
-consulta <- "corrupción"                                  # Término de búsqueda (acepta cualquier palabra/frase)
+consulta <- "corrupción"                                 # Término de búsqueda (acepta cualquier palabra/frase)
 
 # PASO 2: CONSTRUIR URL COMPLETA CON CODIFICACIÓN SEGURA
 # ------------------------------------------------------
