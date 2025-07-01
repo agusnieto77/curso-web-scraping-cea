@@ -32,10 +32,15 @@ html_rooms |> html_element("div.c14whb16") |> html_text2() |> cat()
 
 html_rooms |> html_element("div.rjiv01r") |> html_text2() |> cat()
 
+boton <- "div.d17m63sc > div.c1lbtiq8 > button.l1ovpqvx"
+
+if (length(html_rooms$html_elements(boton)) > 0) { html_rooms$click(boton) }
+Sys.sleep(2)
+
 html_rooms$scroll_by(2500)
-Sys.sleep(5)
+Sys.sleep(3)
 html_rooms$scroll_by(2500)
-Sys.sleep(5)
+Sys.sleep(3)
 
 html_rooms |> html_element("div.gm-style > div a") |> html_attr("href")
 
