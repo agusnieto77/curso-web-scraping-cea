@@ -17,10 +17,9 @@ geo("Tokio")
 
 cap_coor <- capitales |> geocode(address = cap_pais, method = "osm", lat = "lat", long = "lon")
 
-ggplot(map_data("world")) + geom_map(map = mapa, aes(map_id = region), color = "white", fill = "gray90") +
+ggplot(map_data("world")) + geom_map(map = map_data("world"), aes(map_id = region), color = "white", fill = "gray90") +
   geom_text_repel(data = cap_coor, aes(x = lon, y = lat, label = capital), size = 3.5) + theme_void()
 
 geo(c("C. San Fernando, 4, 41004 Sevilla, España",
       "Diag. Alberdi Sur 2695, B7600 Mar del Plata, Provincia de Buenos Aires", 
       "Av. Universidad 3004, Copilco Universidad, Coyoacán, 04510 Ciudad de México, CDMX, México"))
-
