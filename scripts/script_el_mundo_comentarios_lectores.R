@@ -135,7 +135,7 @@ for (l in links_recolectados[1:12]) {
 lineas <- readLines("notas_el_mundo.jsonl", warn = FALSE)
 datos <- lapply(lineas, fromJSON)
 
-datos[[1]]$coment
+datos[[5]]$coment
 
 comentarios_el_mundo <- str_trim(unlist(lapply(datos, function(x) x$coment)))
 
@@ -153,7 +153,7 @@ comentario
 
 resultado <- analyzer$predict(comentario)$output
 
-resultado$output
+resultado
 
 df_com_sent <- tibble(sentimiento = NA, comentario = comentarios_el_mundo)
 

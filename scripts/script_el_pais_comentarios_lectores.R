@@ -28,7 +28,7 @@ boton2 <- "span.a_com_c.disqus-comment-count"
 
 links_fallidos <- c()
 
-for (l in links_recolectados[2]) {
+for (l in links_recolectados[1:10]) {
   message("\nObteniendo el contenido de la URL: ", str_trunc(l, 55))
   intentos <- 1
   exito <- FALSE
@@ -77,6 +77,8 @@ df_notas_el_pais <- read_csv("notas_el_pais.csv")
 
 comentarios <- df_notas_el_pais |> filter(num_com > 0)
 
+comentarios <- comentarios |> filter(!is.na(url_com))
+
 urls <- comentarios$url_com
 
 urls[2]
@@ -87,7 +89,7 @@ json_data <-  fromJSON(html_text(html_element(page, "script[id='disqus-threadDat
 
 json_data
 
-str(json_data, max.level = 2)
+str(json_data, max.level = 4)
 
 df_com <- as_tibble(json_data$response$posts)
 
