@@ -1,11 +1,13 @@
 library(httr2)
 library(jsonlite)
 
+# usethis::edit_r_environ()
+
 url <- "https://opendata.aemet.es/opendata/api/valores/climatologicos/inventarioestaciones/todasestaciones/"
 
-url_datos <- resp_body_json(req_perform(req_url_query(request(url),api_key = Sys.getenv("OPEN_DATA"))))$datos
+url_datos <- resp_body_json(req_perform(req_url_query(request(url),api_key = Sys.getenv("OPEN_DATA"))))
 
-datos <-  resp_body_string(req_perform(request(respuesta$datos)))
+datos <-  resp_body_string(req_perform(request(url_datos$datos)))
 
 cat(datos)
 
