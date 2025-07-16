@@ -2,7 +2,7 @@ library(TweetScraperR)
 
 milei_rds   <- readRDS("milei.rds")
 
-arrow::write_parquet(milei, "milei.parquet")
+arrow::write_parquet(milei_rds, "milei.parquet")
 
 milei_arrow <- arrow::read_parquet("milei.parquet")
 
@@ -36,11 +36,13 @@ img_20 <- sample(imagenes, 20)
 
 analisis_img <- getTweetsImagesAnalysis(img_20)
 
+View(getTweetsImagesAnalysis)
+
 HTMLImgReport(analisis_img)
 
 plotWords(milei_arrow, min_freq = 5, max_words = 200, sw = c('javier', 'milei', 'argentina', 'presidente', 'gobierno', 'si', 'va', 'q', 'the'))
 
-plotEmojis(milei_db, top_n = 20)
+plotEmojis(milei_db, top_n = 15)
 
-plotEmojisPNG(milei_db, top_n = 20)
+plotEmojisPNG(milei_db, top_n = 15)
 

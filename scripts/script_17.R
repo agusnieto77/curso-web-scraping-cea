@@ -4,7 +4,7 @@ tweets_milei <- readRDS("./Milei_2025_07_12_19_10_26/tweets_unificados_tweets_se
 
 usuarixs_milei <- unique(gsub("@", "https://x.com/", tweets_milei$user))
 
-usuarixs_milei_df <- getUsersData(urls_users = u, save = FALSE)
+usuarixs_milei_df <- getUsersData(urls_users = usuarixs_milei, save = FALSE)
 
 str(usuarixs_milei_df)
 

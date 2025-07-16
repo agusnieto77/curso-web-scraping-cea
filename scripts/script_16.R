@@ -26,7 +26,9 @@ usuarixs_r <- c(
   "https://x.com/RLadiesBA"
 )
 
-usuarixs_df <- getUsersData(urls_users = u, save = FALSE)
+View(getUsersData)
+
+usuarixs_df <- getUsersData(urls_users = usuarixs_r, save = TRUE)
 
 str(usuarixs_df)
 
