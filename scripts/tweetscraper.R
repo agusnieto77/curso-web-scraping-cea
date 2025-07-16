@@ -1,3 +1,4 @@
+# package 'TweetScraperR' version '0.2.3.9000'
 library(TweetScraperR)
 
 openTwitter()
