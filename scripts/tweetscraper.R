@@ -2,9 +2,9 @@ library(TweetScraperR)
 
 openTwitter()
 
-user_Twitter()
+userTwitter()
 
-pass_Twitter()
+passTwitter()
 
 tweets_realtime <- getTweetsSearchStreaming2(search = "Milei", n_tweets = 30)
 
