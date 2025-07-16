@@ -1,8 +1,21 @@
-# Cargamos la librería
-require(TweetScraperR)
+library(TweetScraperR)
 
-# Con la función getTweetsSearchStreaming() recolectamos en tiempo real los  
-# tweets que mencionan el término de búsqueda, en este ejemplo es un hashtag.
-# Esta función guarda un rds con los tweets y algunos metadatos.
+openTwitter()
 
-urls_hashtagRstats <- getTweetsSearchStreaming(search = "#RStats", n_tweets = 20)
+user_Twitter()
+
+pass_Twitter()
+
+tweets_realtime <- getTweetsSearchStreaming2(search = "Milei", n_tweets = 30)
+
+tweets_historic <- getTweetsHistoricalHashtag("#rstats", n_tweets = 30)
+
+closeTwitter()
+
+tweets_realtime
+
+tweets_historic
+
+tweets_realtime_enriquecidos <- extractTweetsData(tweets_realtime)
+
+tweets_historic_enriquecidos <- extractTweetsData(tweets_historic)
