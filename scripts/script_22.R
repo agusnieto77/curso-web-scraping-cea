@@ -22,7 +22,8 @@ instruccion <- 'Analiza el HTML y extrae selectores CSS para:
 }
 ```
 
-Límite: 1000 tokens.'
+Límite: 1000 tokens.
+'
   
 url <- "https://www.lacapitalmdp.com/categorias/la-ciudad"
 
@@ -34,7 +35,7 @@ prompt_completo <- paste0(instruccion, "\n```html\n", body_html, "\n```")
 
 cat(prompt_completo)
 
-chat <- chat_ollama(model = "gemma3:12b")
+chat <- chat_ollama(model = "gpt-oss") # gpt-oss
 
 resultado_json <- chat$chat_structured(prompt_completo, type = type_object(
   tag_titulo = type_string("Selector CSS para el título de la noticia"),
@@ -76,37 +77,37 @@ cat(str_extract(codigo, "(?s)```R\\n(.*?)\\n```")[[1]])
 # 1. Cargar librerías necesarias
 library(rvest)
 library(dplyr)
-library(tibble)
 
 # 2. Leer la página web
 url <- "https://www.lacapitalmdp.com/categorias/la-ciudad"
-page <- read_html(url)
+webpage <- read_html(url)
 
 # 3. Extraer elementos con selectores
-titulo_selectores <- 'h2.font-24 > a'
-enlace_selectores <- 'h2.font-24 > a'
+titulos_selector <- '.font-24 a'
+enlaces_selector <- '.font-24 a'
 
-titulos <- html_nodes(page, titulo_selectores) %>%
-  html_text() %>%
-  trimws() # Eliminar espacios en blanco al principio y al final
+titulos <- html_nodes(webpage, titulos_selector) %>%
+  html_text(trim = TRUE)
 
-enlaces <- html_nodes(page, enlace_selectores) %>%
-  html_attr("href") %>%
-  trimws() # Eliminar espacios en blanco al principio y al final
+enlaces <- html_nodes(webpage, enlaces_selector) %>%
+  html_attr("href")
 
 
 # Verificar que ambos vectores tengan la misma longitud
 if (length(titulos) != length(enlaces)) {
-  stop("Los vectores de títulos y enlaces no tienen la misma longitud.")
+  stop("La cantidad de títulos y enlaces no coincide.")
 }
 
+# Limpiar espacios en blanco extra (ya se hace con trim=TRUE en html_text)
+# No es necesario usar trimws() porque html_text deja los espacios en blanco ya limpios.
+
 # 4. Crear y retornar tibble
-noticias <- tibble(
+resultado <- tibble(
   titulo = titulos,
   enlace = enlaces
 )
 
-print(noticias)
+print(resultado)
 
 #################################################
 
