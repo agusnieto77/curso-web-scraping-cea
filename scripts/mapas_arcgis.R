@@ -24,5 +24,5 @@ library(jsonlite)
 
 json_cae <- fromJSON(content(GET("https://cadastro.dgae.gov.pt/api/domain-values/cae?page=0&size=2000"), "text", encoding = "UTF-8"))
 
-saveRDS(json_cae, file = "datos_estabelecimentos.rds")
+saveRDS(json_cae, file = "datos_cae.rds")
 
