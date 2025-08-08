@@ -17,3 +17,12 @@ data_geojson <- st_read(url)
 
 st_write(data_geojson, "datos_estabelecimentos.geojson", driver = "GeoJSON")
 saveRDS(data_geojson, file = "datos_estabelecimentos.rds")
+
+
+library(httr)
+library(jsonlite)
+
+json_cae <- fromJSON(content(GET("https://cadastro.dgae.gov.pt/api/domain-values/cae?page=0&size=2000"), "text", encoding = "UTF-8"))
+
+saveRDS(json_cae, file = "datos_estabelecimentos.rds")
+
